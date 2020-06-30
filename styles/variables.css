@@ -1,0 +1,15 @@
+:root {
+    --bg-color: rgb(245, 245, 245);
+    
+    --grey-1: rgb(220, 220, 220);
+    --grey-2: rgb(195, 195, 195);
+    --grey-3: rgb(170, 170, 170);
+    --grey-4: rgb(145, 145, 145);
+    --grey-5: rgb(120, 120, 120);
+    --grey-6: rgb(95, 95, 95);
+    --grey-7: rgb(44, 44, 44);
+
+    --red: rgb(241, 46, 46);
+
+    --shadow: box-shadow: 4px 4px 10px var(--grey-2), -4px -4px 10px var(--grey-6);
+  }

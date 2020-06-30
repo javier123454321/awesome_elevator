@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Elevator</title>
+    <link rel="stylesheet" href="styles/variables.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="fade">
+        <h1 class="intro">Welcome to the Awesome Elevator App</h1>
+        <div id="elevator-current-floor">
+             <span class="currentFloorTitle">Elevator's Current Floor: </span> <div class="floorNumber"></div></div>
+        <h4>Where would you like to go?</h4>
+        <div class="buttons pickFloor">
+            <button class="up button">Up</button>
+            <button class="down button">Down</button>
+        </div>
     </div>
 </body>
 <script type="module" src="./index.js"></script>

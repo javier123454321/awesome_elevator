@@ -25,7 +25,7 @@ class Elevator {
                     wait(1000).then(this.goUp())
                     break;
                 case -1:
-                     wait(1000).then(this.goDown())
+                    wait(1000).then(this.goDown())
                     break;
             }
         }
