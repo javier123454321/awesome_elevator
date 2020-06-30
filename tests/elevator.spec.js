@@ -1,4 +1,4 @@
-const { Elevator } = require( "../src/classes/Elevator.mjs" );
+import Elevator from "../src/classes/Elevator";
 
 test("Should start on the ground floor or the given floor passed to the constructor", ()=>{
     let elevator = new Elevator();

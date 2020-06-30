@@ -1,5 +1,5 @@
 
-class Elevator {
+export default class Elevator {
     isTravelling = false;
     direction = 0; //1 for going up, -1 for going down, 0 for standing
     constructor(floor = 0){
@@ -33,6 +33,3 @@ class Elevator {
     }
 }
 
-module.exports = {
-    Elevator
-}

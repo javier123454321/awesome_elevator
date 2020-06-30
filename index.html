@@ -12,7 +12,11 @@
     <div id="app" class="fade">
         <h1 class="intro">Welcome to the Awesome Elevator App</h1>
         <div id="elevator-current-floor">
-             <span class="currentFloorTitle">Elevator's Current Floor: </span> <div class="floorNumber"></div></div>
+             <span class="currentFloorTitle">Elevator's Current Floor: </span> 
+        <div class="floorNumber" id="floor-number"></div></div>
+        
+             <h3>You are on floor </h3>
+        <span id="user-current-floor"></span>
         <h4>Where would you like to go?</h4>
         <div class="buttons pickFloor">
             <button class="up button">Up</button>
@@ -20,5 +24,6 @@
         </div>
     </div>
 </body>
-<script type="module" src="./index.js"></script>
+<script type="module" src="src/classes/Elevator.js"></script>
+<script type="module" src="src/mount.js"></script>
 </html>

@@ -6,7 +6,11 @@
     "test:watch": "jest --watchAll",
     "dev": "php -S localhost:8008"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0"
+  },
   "description": "An application for amazingly going up and down in a building",
   "main": "index.js",
   "directories": {
