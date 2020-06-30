@@ -1,0 +1,33 @@
+{
+  "name": "amazing-elevator",
+  "version": "3000.0.0",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "dev": "php -S localhost:8008"
+  },
+  "devDependencies": {},
+  "description": "An application for amazingly going up and down in a building",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jest": "^26.1.0"
+  },
+  "keywords": [
+    "elevators",
+    "amazing",
+    "coding-geniuses"
+  ],
+  "author": "Javier Gonzalez",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/javier123454321/amazing_elevator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/javier123454321/amazing_elevator/issues"
+  },
+  "homepage": "https://github.com/javier123454321/amazing_elevator#readme"
+}
