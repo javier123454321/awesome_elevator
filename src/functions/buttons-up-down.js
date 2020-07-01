@@ -1,13 +1,19 @@
 
 export default function upDownButtonsSetup(elevator, userFloor){
-    document.getElementsByClassName('button').forEach(
-        addEventListener('click', ()=>{ 
-            onButtonClick(elevator, userFloor)
-            
-    }))
+    let buttons = document.querySelectorAll('.button');
+    buttons.forEach(item => item.addEventListener('click', ()=>{ 
+            onButtonClick(elevator, userFloor, item)
+        }))
 }
 
-function onButtonClick(elevator, userFloor){
-    elevator.goToFloor(userFloor);
-    document.getElementById('floor-number').innerHTML = elevator.floor;
+function onButtonClick(elevator, userFloor, item){
+    if(document.getElementsByClassName('active').length === 0){
+        elevator.goToFloor(userFloor, ()=>{
+            document.getElementById('floor-number').innerHTML = elevator.floor;
+        });
+    }
+    if(!item.classList.contains('active')){
+        item.classList.add('active');
+    }
+    
 }
