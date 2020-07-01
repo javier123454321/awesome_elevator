@@ -11,25 +11,38 @@ export default class Elevator {
     goDown(){
         this.floor --;
     }
-    goToFloor(targetFloor){
-        const wait = time => new Promise((resolve) => setTimeout(resolve, time));
-
-        if(targetFloor === this.floor){
+    goToFloor(targetFloor, callback = ()=>{}){
+        if(targetFloor === this.floor || Math.abs(this.floor) > 50){
             this.direction = 0;
             return;
         }
         (targetFloor > this.floor ? this.direction = 1: this.direction = -1)
-        do{
-            switch (this.direction){
-                case 1:
-                    wait(1000).then(this.goUp())
-                    break;
-                case -1:
-                    wait(1000).then(this.goDown())
-                    break;
-            }
+        
+        this.travelTimeout(targetFloor, callback);
+    }
+
+    travelTimeout(targetFloor, callback) {
+        const self = this;
+        console.log(this.floor);
+        setTimeout(() => {
+            self.travel(targetFloor, self, callback);
+        }, 1000)
+    }
+
+    travel(targetFloor, self, callback) {
+        switch (this.direction) {
+            case 1:
+                this.goUp();
+                callback()
+                break;
+            case -1:
+                this.goDown();
+                callback()
+                break;
         }
-        while(this.floor != targetFloor)
+        if (targetFloor != this.floor) {
+            self.travelTimeout(targetFloor, callback);
+        }
     }
 }
 

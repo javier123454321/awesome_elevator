@@ -12,7 +12,7 @@ beforeEach(()=>{
     elevatorSetup(floorNumberNode, userCurrentFloorNode)
 })
 
-test("Should render a random floor where the elevator currently is", ()=>{
+test("Should navigate to current floor when called", ()=>{
     expect(isNaN( parseInt(floorNumberNode.textContent) )).toBe(false)
     
     elevatorSetup(floorNumberNode, userCurrentFloorNode, 10)
