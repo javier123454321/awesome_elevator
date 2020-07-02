@@ -8,10 +8,12 @@ let userCurrentFloorNode;
 let floorNumberNode;
 let upDownButtons;
 beforeEach(()=>{
+
     document.body.innerHTML = html;
     floorNumberNode = document.getElementById('floor-number');
     userCurrentFloorNode = document.getElementById('user-current-floor');
     upDownButtons = document.getElementsByClassName('.upDownButtons');
+    
     let elevator = elevatorSetup(floorNumberNode, userCurrentFloorNode, 1, 0)
     upDownButtonsSetup(elevator);
 })

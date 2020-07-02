@@ -6,5 +6,4 @@ let userCurrentFloorNode = document.getElementById('user-current-floor');
 
 let elevator = elevatorSetup(floorNumberNode, userCurrentFloorNode);
 upDownButtonSetup(elevator, 
-                floorNumberNode = document.getElementById('floor-number'),
-                userCurrentFloorNode = document.getElementById('user-current-floor'));
+                userCurrentFloorNode = document.getElementById('user-current-floor').innerText);
