@@ -22,14 +22,12 @@ export default class Elevator {
     }
 
     travelTimeout(targetFloor, callback) {
-        const self = this;
-        console.log(this.floor);
         setTimeout(() => {
-            self.travel(targetFloor, self, callback);
+            this.travel(targetFloor, callback);
         }, 1000)
     }
 
-    travel(targetFloor, self, callback) {
+    travel(targetFloor, callback) {
         switch (this.direction) {
             case 1:
                 this.goUp();
@@ -41,7 +39,7 @@ export default class Elevator {
                 break;
         }
         if (targetFloor != this.floor) {
-            self.travelTimeout(targetFloor, callback);
+            this.travelTimeout(targetFloor, callback);
         }
     }
 }
