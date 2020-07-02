@@ -15,5 +15,4 @@ function onButtonClick(elevator, userFloor, item){
     if(!item.classList.contains('active')){
         item.classList.add('active');
     }
-    
 }
