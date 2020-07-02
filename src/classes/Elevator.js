@@ -28,10 +28,6 @@ export default class Elevator {
     }
 
     travel(targetFloor, callback) {
-        console.log(`
-        target: ${targetFloor}
-        current: ${this.floor}
-        equal? ${targetFloor === this.floor} `);
 
         switch (this.direction) {
             case 1:
