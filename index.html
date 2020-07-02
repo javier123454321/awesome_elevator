@@ -19,10 +19,23 @@
              <h3>You are on floor </h3>
         <span id="user-current-floor"></span>
         <h4>Where would you like to go?</h4>
-        <div class="buttons pickFloor">
-            <button id="up-button" class="up button">Up</button>
-            <button id="down-button" class="down button">Down</button>
+        
+        <div >
+            <div id="up-down" class="buttons pickFloor">
+                <button id="up-button" class="up button">Up</button>
+                <button id="down-button" class="down button">Down</button>
+            </div>
+                    
+            <div id="elevator" class="transparent">
+                Elevator is here!
+                <div id="pick-floor" class="hidden buttons">
+    
+                </div>
+            </div>
         </div>
+
+
+
     </div>
 </body>
 <script type="module" src="./src/classes/Elevator.js"></script>

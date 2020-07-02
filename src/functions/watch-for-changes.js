@@ -5,8 +5,6 @@ function isOnFloor(elevator, floor){
 }
 
 async function watchIsOnFloor(elevator, floor, callback){
-    console.log('watching');
-    
     setInterval(() => {
         if(isOnFloor(elevator, floor)){
             callback()
