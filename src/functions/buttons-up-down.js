@@ -9,7 +9,15 @@ export default function upDownButtonsSetup(elevator, userFloor){
     watchIsOnFloor(elevator, userFloor, renderOpenElevator);
 }
 
-function onButtonClick(elevator, userFloor, item){
+function onButtonClick(elevator, userFloor, item){ 
+    console.log(`elevator floor = ${elevator.floor}\nuser floor: ${userFloor}`);
+    
+    if(elevator.floor == userFloor){
+        console.log('user is at destination');
+        renderOpenElevator() 
+        return
+    }
+    item.removeEventListener('click', onButtonClick, false)
     if(document.getElementsByClassName('active').length === 0){
         elevator.goToFloor(userFloor, () => {
             document.getElementById('floor-number').innerHTML = elevator.floor;

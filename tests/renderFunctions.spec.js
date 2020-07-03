@@ -1,4 +1,4 @@
-import { renderOpenElevator } from '../src/functions/renderFunctions.js';
+import { renderOpenElevator, renderClosedElevator } from '../src/functions/renderFunctions.js';
 import elevatorSetup from '../src/functions/elevator-setup';
 // import mount from '../src/mount.js';
 
@@ -21,9 +21,17 @@ test("Should render the up or down buttons when elevator is not in user floor, a
     expect( document.getElementById('up-down').classList.contains('transparent') ).toBe(true)
 })
 
-test("Should render the pick floor buttons when elevator is open", () => {
+test("Should render the 'pick floor' buttons when elevator is open", () => {
     expect( document.getElementById('pick-floor').classList.contains('hidden') ).toBe(true);
     renderOpenElevator()
     expect( document.getElementById('pick-floor').classList.contains('shown') ).toBe(true);
     expect( document.getElementsByClassName('pickFloorButton').length > 1 ).toBe(true);
+})
+
+test("Should render the up/down button when elevator is closed", () => {
+    renderOpenElevator();
+    
+    renderClosedElevator();
+    expect( document.getElementById('pick-floor').classList.contains('hidden') ).toBe(true);
+
 })

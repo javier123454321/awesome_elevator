@@ -70,7 +70,7 @@ body{
 }
 
 .hidden{
-    animation: 1s fade-to-hide ease-in-out;
+    display: none;
 }
 
 
