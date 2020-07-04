@@ -7,7 +7,7 @@ let floorNumberNode = document.getElementById('floor-number');
 let userCurrentFloorNode = document.getElementById('user-current-floor');
 
 // Setup the initial state of the elevator
-elevatorSetup(floorNumberNode, userCurrentFloorNode, 2);
+elevatorSetup(floorNumberNode, userCurrentFloorNode);
 renderUpDownButtons();
 
 
