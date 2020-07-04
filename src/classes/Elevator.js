@@ -12,7 +12,6 @@ export default class Elevator {
         this.floor --;
     }
     goToFloor(targetFloor, callback = ()=>{}){
-        console.log('going to floor: ', targetFloor);
         if(targetFloor === this.floor || Math.abs(this.floor) > 50){
             this.direction = 0;
             return;

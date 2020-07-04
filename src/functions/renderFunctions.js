@@ -3,35 +3,57 @@ import upDownButtonsSetup from './buttons-up-down.js';
 import Elevator from '../classes/Elevator.js';
 
 function renderOpenElevator(){
-    if(isElevatorShowing()){
-        console.log('elevator is showing');
+    if(isElevatorShowing() || upOrDownButtonIsActive()){
         document.getElementById('elevator').classList.replace('transparent', 'opaque');
         document.getElementById('elevator').classList.replace('hidden', 'shown')
         document.getElementById('up-down').classList.replace('opaque','transparent'); 
         renderElevatorButtons()
-        return
     }
     return
+}
+
+function getCurrentElevatorState(){
+    let elevator = new Elevator( document.getElementById('floor-number').innerText )
+    return elevator
+}
+
+function getCurrentUserState(){
+    return document.getElementById('user-current-floor').innerText;
+}
+
+function renderUpDownButtons(elevator = getCurrentElevatorState(), userFloor = 0){
+    document.getElementById('up-down').innerHTML =`
+    <button id="up-button" class="up direction button">Up</button>
+    <button id="down-button" class="down direction button">Down</button>
+    `;
+    upDownButtonsSetup(elevator, userFloor)
 }
 
 function renderClosedElevator(){
         Array.from(document.getElementsByClassName('button')).forEach(element => {
             element.classList.remove('active')
         });
+
         let elev = document.getElementById('elevator')
         elev.classList.replace('opaque', 'transparent');
         elev.classList.add('hidden');
 
         document.getElementById('up-down').classList.replace('transparent', 'opaque');
-        // let userFloor = document.getElementById('user-current-floor').innerText
-        // let elevator = new Elevator(userFloor)
-        // upDownButtonsSetup(elevator, userFloor)
+        renderUpDownButtons(getCurrentElevatorState(), getCurrentUserState());
         return
     } 
 
 function isElevatorShowing(){
     let elevatorClasses = document.getElementById('elevator').classList
-    return (elevatorClasses.contains('opaque') || !elevatorClasses.contains('hidden'))
+    return (!elevatorClasses.contains('hidden'))
+}
+
+function upOrDownButtonIsActive(){
+    let upDownButtons = document.querySelector('.direction.button.active');
+    if(upDownButtons){
+        return true
+    }
+    return false
 }
 
 function renderElevatorButtons(){
@@ -81,5 +103,6 @@ function setElevatorButtonListener(button, targetFloor){
 }
 export {
     renderOpenElevator,
-    renderClosedElevator
+    renderClosedElevator,
+    renderUpDownButtons
 }
