@@ -137,8 +137,8 @@ body{
 
 @font-face {
     font-family: 'alarm_clockregular';
-    src: url('/assets/fonts/alarm-clock/alarm_clock-webfont.woff2') format('woff2'),
-         url('/assets/fonts/alarm-clock/alarm_clock-webfont.woff') format('woff');
+    src: url('../assets/fonts/alarm-clock/alarm_clock-webfont.woff2') format('woff2'),
+         url('../assets/fonts/alarm-clock/alarm_clock-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
